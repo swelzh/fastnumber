@@ -15,6 +15,10 @@
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define kRowCount 20
 
+static int marginLeft = 20;
+static int marginRight = 20;
+
+
 @interface RememberNumberController()
     <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -90,7 +94,10 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *message = [[NSString alloc] initWithFormat:@"你点击了第%ld个section，第%ld个cell",(long)indexPath.section,(long)indexPath.row];
+    NSInteger cellCount = kRowCount + 1;
+    BOOL isRowEnd = (indexPath.row + 1) % cellCount == 0 ;
+    
+    NSString *message = [[NSString alloc] initWithFormat:@"你点击了第%ld个section，第%ld个cell %@",(long)indexPath.section,(long)indexPath.row, isRowEnd?@"行末啊":@"不是行末"];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //点击确定后执行的操作；
@@ -105,13 +112,32 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    CGFloat itemWidth = (SCREEN_WIDTH - 20 -20) / kRowCount;
+    NSInteger rowCount = kRowCount;
+    NSInteger cellCount = kRowCount + 1;
+    
+    CGFloat displayWidth = SCREEN_WIDTH - marginLeft - marginRight;
+    CGFloat rowLabelWidth = 30;
+    
+    
+    
+    // 判断是否行末
+    BOOL isRowEnd = [self isRowEnd:indexPath];
+    
+    // 数字cell
+    CGFloat itemWidth = (displayWidth - rowLabelWidth) / rowCount;
+    CGFloat itemHeight = itemWidth;
     CGSize itemSize = CGSizeMake(itemWidth, itemWidth);
+    
+    // 行数cell
+    if (isRowEnd) {
+        itemSize = CGSizeMake(rowLabelWidth, itemHeight);
+    }
+    
     return itemSize;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(20, 20, 10, 20);
+    return UIEdgeInsetsMake(20, marginLeft, 10, marginRight);
 //    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
@@ -126,5 +152,14 @@ static NSString * const reuseIdentifier = @"Cell";
  - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
  - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
  */
+
+- (BOOL)isRowEnd:(NSIndexPath *)indexPath{
+    
+    NSInteger rowCount = kRowCount;
+    NSInteger cellCount = rowCount + 1;
+    // 判断是否行末
+    BOOL isRowEnd = (indexPath.row + 1) % cellCount == 0 ;
+    return isRowEnd;
+}
 
 @end
