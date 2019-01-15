@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-//#import "RememberNumberController-swift.h"
-#import "FastNumber-swift.h"
+#import "RememberNumberController.h"
+//#import "FastNumber-swift.h"
 
 
 @interface ViewController ()
@@ -32,9 +32,11 @@
     
     
     // Swift文件
-    RememberNumberController *vc = [[RememberNumberController alloc] initWithNibName:@"RememberNumberController" bundle:nil];
-    [self presentViewController:vc animated:YES completion:nil];
-//    [self.navigationController pushViewController:vc animated:YES];
+    UIStoryboard *main =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RememberNumberController *vc = [main instantiateViewControllerWithIdentifier:@"RememberNumberController"];
+    
+//    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
