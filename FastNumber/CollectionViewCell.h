@@ -11,6 +11,9 @@
 @interface CollectionViewCell : UICollectionViewCell
 
 @property(strong,nonatomic) UIImageView *imageView;
-@property(strong,nonatomic) UILabel *descLabel;
+@property(strong,nonatomic) UILabel *textLabel;
+
+@property(strong,nonatomic) UIImageView *leftLine;
+@property(strong,nonatomic) UIImageView *rightLine;
 
 @end

@@ -13,6 +13,7 @@
 #import "CollectionReusableView.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define kRowCount 20
 
 @interface RememberNumberController()
     <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
@@ -31,10 +32,16 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     //不要忘记初始化；
     self.arr = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 9; i++) {
-        [self.arr addObject:[UIImage imageNamed:[[NSString alloc] initWithFormat:@"%d",i + 1]]];
+    for (int i = 0; i < 400; i++) {
+        NSNumber *nubmer = @(arc4random_uniform(10));
+        [self.arr addObject:nubmer];
     }
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.minimumLineSpacing = 0;
+    flowLayout.minimumInteritemSpacing = 0;
+    CGFloat itemWidth = (SCREEN_WIDTH - 20 -20) / kRowCount;
+    flowLayout.itemSize = CGSizeMake(itemWidth, itemWidth);
+    
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     self.collectionView = [[UICollectionView alloc] initWithFrame:[[UIScreen mainScreen] bounds] collectionViewLayout:flowLayout];
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"MyCollectionCell"];
@@ -56,8 +63,9 @@ static NSString * const reuseIdentifier = @"Cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCollectionCell" forIndexPath:indexPath];
-    cell.imageView.image = [self.arr objectAtIndex:indexPath.row];
-    cell.descLabel.text = [[NSString alloc] initWithFormat:@"{%ld,%ld}",indexPath.section,indexPath.row];
+//    cell.imageView.image = [self.arr objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [[NSString alloc] initWithFormat:@"{%ld,%ld}",indexPath.section,indexPath.row];
+    cell.textLabel.text = [[self.arr objectAtIndex:indexPath.row] stringValue];
     return cell;
 }
 
@@ -92,13 +100,19 @@ static NSString * const reuseIdentifier = @"Cell";
     }];
 }
 
+
+
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake((SCREEN_WIDTH - 80) / 3, (SCREEN_WIDTH - 80) / 3 + 20);
+    
+    CGFloat itemWidth = (SCREEN_WIDTH - 20 -20) / kRowCount;
+    CGSize itemSize = CGSizeMake(itemWidth, itemWidth);
+    return itemSize;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(20, 20, 10, 20);
+//    return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
