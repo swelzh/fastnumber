@@ -17,6 +17,8 @@
 		DAE40B5921EE0470007B7554 /* FastNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B5821EE0470007B7554 /* FastNumberTests.m */; };
 		DAE40B6421EE0470007B7554 /* FastNumberUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B6321EE0470007B7554 /* FastNumberUITests.m */; };
 		DAE40BBD21EE1ABD007B7554 /* RememberNumberController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40BBC21EE1ABD007B7554 /* RememberNumberController.m */; };
+		DAE40BC221EE20CF007B7554 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40BC021EE20CE007B7554 /* CollectionViewCell.m */; };
+		DAE40BC321EE20CF007B7554 /* CollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40BC121EE20CF007B7554 /* CollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		DAE40B6521EE0470007B7554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE40BBB21EE1ABD007B7554 /* RememberNumberController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RememberNumberController.h; sourceTree = "<group>"; };
 		DAE40BBC21EE1ABD007B7554 /* RememberNumberController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RememberNumberController.m; sourceTree = "<group>"; };
+		DAE40BBE21EE20CE007B7554 /* CollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionReusableView.h; sourceTree = "<group>"; };
+		DAE40BBF21EE20CE007B7554 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		DAE40BC021EE20CE007B7554 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		DAE40BC121EE20CF007B7554 /* CollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionReusableView.m; sourceTree = "<group>"; };
 		F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +140,10 @@
 				DAE40B4321EE046E007B7554 /* ViewController.m */,
 				DAE40BBB21EE1ABD007B7554 /* RememberNumberController.h */,
 				DAE40BBC21EE1ABD007B7554 /* RememberNumberController.m */,
+				DAE40BBE21EE20CE007B7554 /* CollectionReusableView.h */,
+				DAE40BC121EE20CF007B7554 /* CollectionReusableView.m */,
+				DAE40BBF21EE20CE007B7554 /* CollectionViewCell.h */,
+				DAE40BC021EE20CE007B7554 /* CollectionViewCell.m */,
 				DAE40B4521EE046E007B7554 /* Main.storyboard */,
 				DAE40B4821EE0470007B7554 /* Assets.xcassets */,
 				DAE40B4A21EE0470007B7554 /* LaunchScreen.storyboard */,
@@ -352,9 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE40B4421EE046E007B7554 /* ViewController.m in Sources */,
+				DAE40BC221EE20CF007B7554 /* CollectionViewCell.m in Sources */,
 				DAE40BBD21EE1ABD007B7554 /* RememberNumberController.m in Sources */,
 				DAE40B4F21EE0470007B7554 /* main.m in Sources */,
 				DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */,
+				DAE40BC321EE20CF007B7554 /* CollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

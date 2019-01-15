@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RememberNumberController : UICollectionViewController
+@interface RememberNumberController : UIViewController
 
 @end
 

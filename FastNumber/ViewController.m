@@ -31,11 +31,7 @@
 - (void)touchDown {
     
     
-    // Swift文件
-    UIStoryboard *main =  [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    RememberNumberController *vc = [main instantiateViewControllerWithIdentifier:@"RememberNumberController"];
-    
-//    [self presentViewController:vc animated:YES completion:nil];
+    RememberNumberController *vc = [[RememberNumberController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
