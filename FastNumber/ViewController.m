@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+//#import "RememberNumberController-swift.h"
+#import "FastNumber-swift.h"
+
 
 @interface ViewController ()
 
@@ -17,6 +20,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(touchDown) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)touchDown {
+    
+    
+    // Swift文件
+    RememberNumberController *vc = [[RememberNumberController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

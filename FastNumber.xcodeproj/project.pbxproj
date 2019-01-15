@@ -16,6 +16,7 @@
 		DAE40B4F21EE0470007B7554 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4E21EE0470007B7554 /* main.m */; };
 		DAE40B5921EE0470007B7554 /* FastNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B5821EE0470007B7554 /* FastNumberTests.m */; };
 		DAE40B6421EE0470007B7554 /* FastNumberUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B6321EE0470007B7554 /* FastNumberUITests.m */; };
+		DAE40B7A21EE098E007B7554 /* RememberNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B7921EE098E007B7554 /* RememberNumberController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		DAE40B5F21EE0470007B7554 /* FastNumberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastNumberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE40B6321EE0470007B7554 /* FastNumberUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNumberUITests.m; sourceTree = "<group>"; };
 		DAE40B6521EE0470007B7554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE40B7821EE0951007B7554 /* FastNumber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastNumber-Bridging-Header.h"; sourceTree = "<group>"; };
+		DAE40B7921EE098E007B7554 /* RememberNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RememberNumberController.swift; sourceTree = "<group>"; };
 		F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,11 +132,13 @@
 				DAE40B4021EE046E007B7554 /* AppDelegate.m */,
 				DAE40B4221EE046E007B7554 /* ViewController.h */,
 				DAE40B4321EE046E007B7554 /* ViewController.m */,
+				DAE40B7921EE098E007B7554 /* RememberNumberController.swift */,
 				DAE40B4521EE046E007B7554 /* Main.storyboard */,
 				DAE40B4821EE0470007B7554 /* Assets.xcassets */,
 				DAE40B4A21EE0470007B7554 /* LaunchScreen.storyboard */,
 				DAE40B4D21EE0470007B7554 /* Info.plist */,
 				DAE40B4E21EE0470007B7554 /* main.m */,
+				DAE40B7821EE0951007B7554 /* FastNumber-Bridging-Header.h */,
 			);
 			path = FastNumber;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				TargetAttributes = {
 					DAE40B3B21EE046E007B7554 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					DAE40B5321EE0470007B7554 = {
 						CreatedOnToolsVersion = 10.0;
@@ -341,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE40B4421EE046E007B7554 /* ViewController.m in Sources */,
+				DAE40B7A21EE098E007B7554 /* RememberNumberController.swift in Sources */,
 				DAE40B4F21EE0470007B7554 /* main.m in Sources */,
 				DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */,
 			);
@@ -514,6 +521,7 @@
 			baseConfigurationReference = F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FastNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -522,6 +530,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blades.FastNumber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FastNumber/FastNumber-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -531,6 +542,7 @@
 			baseConfigurationReference = 7C25C9B98E5D88C8B7167457 /* Pods-FastNumber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FastNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +551,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blades.FastNumber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FastNumber/FastNumber-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -546,6 +560,7 @@
 		DAE40B6C21EE0470007B7554 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FastNumberTests/Info.plist;
@@ -564,6 +579,7 @@
 		DAE40B6D21EE0470007B7554 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FastNumberTests/Info.plist;
@@ -582,6 +598,7 @@
 		DAE40B6F21EE0470007B7554 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FastNumberUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -599,6 +616,7 @@
 		DAE40B7021EE0470007B7554 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FastNumberUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
