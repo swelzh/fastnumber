@@ -16,7 +16,8 @@
 		DAE40B4F21EE0470007B7554 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4E21EE0470007B7554 /* main.m */; };
 		DAE40B5921EE0470007B7554 /* FastNumberTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B5821EE0470007B7554 /* FastNumberTests.m */; };
 		DAE40B6421EE0470007B7554 /* FastNumberUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B6321EE0470007B7554 /* FastNumberUITests.m */; };
-		DAE40B7A21EE098E007B7554 /* RememberNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B7921EE098E007B7554 /* RememberNumberController.swift */; };
+		DAE40BB921EE108E007B7554 /* RememberNumberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE40BB721EE108E007B7554 /* RememberNumberController.swift */; };
+		DAE40BBA21EE108E007B7554 /* RememberNumberController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE40BB821EE108E007B7554 /* RememberNumberController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		DAE40B6321EE0470007B7554 /* FastNumberUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNumberUITests.m; sourceTree = "<group>"; };
 		DAE40B6521EE0470007B7554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE40B7821EE0951007B7554 /* FastNumber-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastNumber-Bridging-Header.h"; sourceTree = "<group>"; };
-		DAE40B7921EE098E007B7554 /* RememberNumberController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RememberNumberController.swift; sourceTree = "<group>"; };
+		DAE40BB721EE108E007B7554 /* RememberNumberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberNumberController.swift; sourceTree = "<group>"; };
+		DAE40BB821EE108E007B7554 /* RememberNumberController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RememberNumberController.xib; sourceTree = "<group>"; };
 		F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,7 +134,8 @@
 				DAE40B4021EE046E007B7554 /* AppDelegate.m */,
 				DAE40B4221EE046E007B7554 /* ViewController.h */,
 				DAE40B4321EE046E007B7554 /* ViewController.m */,
-				DAE40B7921EE098E007B7554 /* RememberNumberController.swift */,
+				DAE40BB721EE108E007B7554 /* RememberNumberController.swift */,
+				DAE40BB821EE108E007B7554 /* RememberNumberController.xib */,
 				DAE40B4521EE046E007B7554 /* Main.storyboard */,
 				DAE40B4821EE0470007B7554 /* Assets.xcassets */,
 				DAE40B4A21EE0470007B7554 /* LaunchScreen.storyboard */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE40B4C21EE0470007B7554 /* LaunchScreen.storyboard in Resources */,
+				DAE40BBA21EE108E007B7554 /* RememberNumberController.xib in Resources */,
 				DAE40B4921EE0470007B7554 /* Assets.xcassets in Resources */,
 				DAE40B4721EE046E007B7554 /* Main.storyboard in Resources */,
 			);
@@ -352,7 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE40B4421EE046E007B7554 /* ViewController.m in Sources */,
-				DAE40B7A21EE098E007B7554 /* RememberNumberController.swift in Sources */,
+				DAE40BB921EE108E007B7554 /* RememberNumberController.swift in Sources */,
 				DAE40B4F21EE0470007B7554 /* main.m in Sources */,
 				DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */,
 			);
