@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6798D95B690258D32BFE3DC /* libPods-FastNumber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 101520C3DC16AFF108AEDE85 /* libPods-FastNumber.a */; };
+		4C44338E2223A73D4FD5A9FE /* Pods_FastNumber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E423B4F90DD5E816A7AF1F2 /* Pods_FastNumber.framework */; };
 		DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4021EE046E007B7554 /* AppDelegate.m */; };
 		DAE40B4421EE046E007B7554 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4321EE046E007B7554 /* ViewController.m */; };
 		DAE40B4721EE046E007B7554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE40B4521EE046E007B7554 /* Main.storyboard */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		101520C3DC16AFF108AEDE85 /* libPods-FastNumber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastNumber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E423B4F90DD5E816A7AF1F2 /* Pods_FastNumber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastNumber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C25C9B98E5D88C8B7167457 /* Pods-FastNumber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.release.xcconfig"; sourceTree = "<group>"; };
 		DAE40B3C21EE046E007B7554 /* FastNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE40B3F21EE046E007B7554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6798D95B690258D32BFE3DC /* libPods-FastNumber.a in Frameworks */,
+				4C44338E2223A73D4FD5A9FE /* Pods_FastNumber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		1C92F840F2713CEC4DD83E98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				101520C3DC16AFF108AEDE85 /* libPods-FastNumber.a */,
+				6E423B4F90DD5E816A7AF1F2 /* Pods_FastNumber.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -297,9 +297,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

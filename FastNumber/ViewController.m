@@ -23,6 +23,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(100, 100, 100, 100);
+    [button setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(touchDown) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -32,7 +33,8 @@
     
     // Swift文件
     RememberNumberController *vc = [[RememberNumberController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:nil];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
