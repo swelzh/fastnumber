@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6798D95B690258D32BFE3DC /* libPods-FastNumber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 101520C3DC16AFF108AEDE85 /* libPods-FastNumber.a */; };
 		DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4021EE046E007B7554 /* AppDelegate.m */; };
 		DAE40B4421EE046E007B7554 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4321EE046E007B7554 /* ViewController.m */; };
 		DAE40B4721EE046E007B7554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE40B4521EE046E007B7554 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		101520C3DC16AFF108AEDE85 /* libPods-FastNumber.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FastNumber.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C25C9B98E5D88C8B7167457 /* Pods-FastNumber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.release.xcconfig"; sourceTree = "<group>"; };
 		DAE40B3C21EE046E007B7554 /* FastNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE40B3F21EE046E007B7554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DAE40B4021EE046E007B7554 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		DAE40B5F21EE0470007B7554 /* FastNumberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastNumberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE40B6321EE0470007B7554 /* FastNumberUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNumberUITests.m; sourceTree = "<group>"; };
 		DAE40B6521EE0470007B7554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6798D95B690258D32BFE3DC /* libPods-FastNumber.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C92F840F2713CEC4DD83E98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				101520C3DC16AFF108AEDE85 /* libPods-FastNumber.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2D3D7C3A7346F26640DC1E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */,
+				7C25C9B98E5D88C8B7167457 /* Pods-FastNumber.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DAE40B3321EE046E007B7554 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				DAE40B5721EE0470007B7554 /* FastNumberTests */,
 				DAE40B6221EE0470007B7554 /* FastNumberUITests */,
 				DAE40B3D21EE046E007B7554 /* Products */,
+				B2D3D7C3A7346F26640DC1E1 /* Pods */,
+				1C92F840F2713CEC4DD83E98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAE40B6821EE0470007B7554 /* Build configuration list for PBXNativeTarget "FastNumber" */;
 			buildPhases = (
+				0E4A59CC39EB1D7611F114FD /* [CP] Check Pods Manifest.lock */,
 				DAE40B3821EE046E007B7554 /* Sources */,
 				DAE40B3921EE046E007B7554 /* Frameworks */,
 				DAE40B3A21EE046E007B7554 /* Resources */,
+				0B687E35F6DC3EDFD783F45F /* [CP] Embed Pods Frameworks */,
+				DABEDB824ADF48FC02744E52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B687E35F6DC3EDFD783F45F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0E4A59CC39EB1D7611F114FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FastNumber-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DABEDB824ADF48FC02744E52 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DAE40B3821EE046E007B7554 /* Sources */ = {
@@ -433,6 +511,7 @@
 		};
 		DAE40B6921EE0470007B7554 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F80B71DDB805F19AA16D8DE8 /* Pods-FastNumber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -449,6 +528,7 @@
 		};
 		DAE40B6A21EE0470007B7554 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C25C9B98E5D88C8B7167457 /* Pods-FastNumber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
