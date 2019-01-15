@@ -32,7 +32,7 @@
     
     
     // Swift文件
-    RememberNumberController *vc = [[RememberNumberController alloc] init];
+    RememberNumberController *vc = [[RememberNumberController alloc] initWithNibName:@"RememberNumberController" bundle:nil];
     [self presentViewController:vc animated:YES completion:nil];
 //    [self.navigationController pushViewController:vc animated:YES];
 }
