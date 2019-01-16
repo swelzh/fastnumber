@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "CollectionReusableView.h"
 #import "IndexHelper.h"
+#import "Masonry.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
