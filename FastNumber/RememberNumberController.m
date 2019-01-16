@@ -13,12 +13,13 @@
 #import "CollectionReusableView.h"
 #import "IndexHelper.h"
 #import "Masonry.h"
+#import "EDColor.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
 
-static int marginLeft = 15;
-static int marginRight = 15;
+static int marginLeft = 10;
+static int marginRight = 10;
 
 
 @interface RememberNumberController()
@@ -54,17 +55,22 @@ static NSString * const reuseIdentifier = @"Cell";
         [self.arr addObject:nubmer];
     }
     
-    [self addCollectionView];
+    [self addSubViews];
     
 }
 
 
-- (void)addCollectionView{
+- (void)addSubViews{
+    
+    self.view.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
+    
+    
     // addInputView
     UIView *inputView = [UIView new];
-    inputView.backgroundColor = [UIColor yellowColor];
+    inputView.backgroundColor= [UIColor colorWithHex:0xF4F2D7];;
     [self.view addSubview:inputView];
     self.inputView = inputView;
+    
     
     
     
@@ -74,6 +80,8 @@ static NSString * const reuseIdentifier = @"Cell";
     flowLayout.minimumInteritemSpacing = 0;
     
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    self.collectionView.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
+    self.collectionView.backgroundView.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
     self.collectionView = [[UICollectionView alloc] initWithFrame:[[UIScreen mainScreen] bounds] collectionViewLayout:flowLayout];
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"MyCollectionCell"];
     self.collectionView.scrollEnabled = YES;

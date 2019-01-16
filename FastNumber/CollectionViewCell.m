@@ -9,6 +9,7 @@
 
 #import "CollectionViewCell.h"
 #import "Masonry.h"
+#import "EDColor.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
@@ -28,6 +29,7 @@
       self.textLabel = [[UILabel alloc] init];
       self.textLabel.textAlignment = NSTextAlignmentCenter;
       [self addSubview:self.textLabel];
+      self.textLabel.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
       
       [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
           make.left.right.bottom.top.equalTo(self);

@@ -1,15 +1,18 @@
 PODS:
+  - EDColor (1.0.1)
   - Masonry (1.1.0)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - EDColor
   - Masonry
   - SnapKit
 
 SPEC CHECKSUMS:
+  EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 15e6e9eee85f220bb5ac3da09a5ba6afe7d1bf31
+PODFILE CHECKSUM: c402927f54fbe1cdb7a618e9936d8ed58a63476d
 
 COCOAPODS: 1.4.0

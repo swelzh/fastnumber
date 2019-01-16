@@ -7,5 +7,5 @@ use_frameworks!
 target 'FastNumber' do 
     pod 'Masonry'
     pod 'SnapKit'
- 
+    pod 'EDColor'
 end
