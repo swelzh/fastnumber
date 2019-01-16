@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger intervalNumber;//间隔数
 
 - (BOOL)isRowEnd:(NSIndexPath *)indexPath;
-
+- (BOOL)isInterval:(NSIndexPath *)indexPath;
 
 @end
 

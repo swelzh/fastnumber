@@ -84,18 +84,20 @@ static NSString * const reuseIdentifier = @"Cell";
     return realTotal;
 }
 
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCollectionCell" forIndexPath:indexPath];
-//    cell.imageView.image = [self.arr objectAtIndex:indexPath.row];
-//    cell.textLabel.text = [[NSString alloc] initWithFormat:@"{%ld,%ld}",indexPath.section,indexPath.row];
+ 
     if ([self.indexHelper isRowEnd:indexPath]) {
         cell.textLabel.text = [NSString stringWithFormat:@"Row%ld",(indexPath.row + 1)/(kRowCount + 1)];
+        cell.rightLine.hidden = YES;
     }else if (indexPath.row < self.arr.count) {
         cell.textLabel.text = [[self.arr objectAtIndex:indexPath.row] stringValue];
+        cell.rightLine.hidden = ![self.indexHelper isInterval:indexPath];
     }else{
         cell.textLabel.text = @"";
+        cell.rightLine.hidden = YES;
     }
     
     return cell;
