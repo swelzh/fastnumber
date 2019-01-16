@@ -11,9 +11,10 @@
 #import "CollectionViewCell.h"
 #import "AppDelegate.h"
 #import "CollectionReusableView.h"
+#import "IndexHelper.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-#define kRowCount 20
+
 
 static int marginLeft = 20;
 static int marginRight = 20;
@@ -24,12 +25,23 @@ static int marginRight = 20;
 
 @property(strong,nonatomic) UICollectionView *collectionView;
 @property(strong,nonatomic) NSMutableArray *arr;
+@property(strong,nonatomic) IndexHelper *indexHelper;
+
 
 @end
 
 @implementation RememberNumberController
 
 static NSString * const reuseIdentifier = @"Cell";
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _indexHelper = [[IndexHelper alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     
@@ -60,7 +72,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.arr.count;
+    return [self itemNumbers];
+}
+
+- (NSInteger)itemNumbers{
+    NSInteger cloumnCount = kRowCount;
+    NSInteger realCloumnCount = cloumnCount + 1;
+    NSInteger rowCount = self.arr.count % cloumnCount == 0 ? self.arr.count/cloumnCount : self.arr.count/cloumnCount + 1;
+    
+    NSInteger realTotal = realCloumnCount * rowCount ;
+    return realTotal;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -69,7 +90,14 @@ static NSString * const reuseIdentifier = @"Cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MyCollectionCell" forIndexPath:indexPath];
 //    cell.imageView.image = [self.arr objectAtIndex:indexPath.row];
 //    cell.textLabel.text = [[NSString alloc] initWithFormat:@"{%ld,%ld}",indexPath.section,indexPath.row];
-    cell.textLabel.text = [[self.arr objectAtIndex:indexPath.row] stringValue];
+    if ([self.indexHelper isRowEnd:indexPath]) {
+        cell.textLabel.text = [NSString stringWithFormat:@"Row%ld",(indexPath.row + 1)/(kRowCount + 1)];
+    }else if (indexPath.row < self.arr.count) {
+        cell.textLabel.text = [[self.arr objectAtIndex:indexPath.row] stringValue];
+    }else{
+        cell.textLabel.text = @"";
+    }
+    
     return cell;
 }
 
@@ -116,12 +144,12 @@ static NSString * const reuseIdentifier = @"Cell";
     NSInteger cellCount = kRowCount + 1;
     
     CGFloat displayWidth = SCREEN_WIDTH - marginLeft - marginRight;
-    CGFloat rowLabelWidth = 30;
+    CGFloat rowLabelWidth = 70;
     
     
     
     // 判断是否行末
-    BOOL isRowEnd = [self isRowEnd:indexPath];
+    BOOL isRowEnd = [self.indexHelper isRowEnd:indexPath];
     
     // 数字cell
     CGFloat itemWidth = (displayWidth - rowLabelWidth) / rowCount;
@@ -153,13 +181,6 @@ static NSString * const reuseIdentifier = @"Cell";
  - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
  */
 
-- (BOOL)isRowEnd:(NSIndexPath *)indexPath{
-    
-    NSInteger rowCount = kRowCount;
-    NSInteger cellCount = rowCount + 1;
-    // 判断是否行末
-    BOOL isRowEnd = (indexPath.row + 1) % cellCount == 0 ;
-    return isRowEnd;
-}
+
 
 @end

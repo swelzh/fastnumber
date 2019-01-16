@@ -1,0 +1,6 @@
+framework module Pods_FastNumber {
+  umbrella header "Pods-FastNumber-umbrella.h"
+
+  export *
+  module * { export * }
+}

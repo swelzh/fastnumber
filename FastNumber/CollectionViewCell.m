@@ -51,9 +51,7 @@
           make.width.equalTo(@(1));
       }];
       
-      
-      self.backgroundColor = [UIColor yellowColor];
-      
+       
       
   }
   return self;

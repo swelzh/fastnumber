@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C44338E2223A73D4FD5A9FE /* Pods_FastNumber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E423B4F90DD5E816A7AF1F2 /* Pods_FastNumber.framework */; };
+		DA49393121EEDBB900269C6B /* IndexHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DA49393021EEDBB900269C6B /* IndexHelper.m */; };
 		DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4021EE046E007B7554 /* AppDelegate.m */; };
 		DAE40B4421EE046E007B7554 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE40B4321EE046E007B7554 /* ViewController.m */; };
 		DAE40B4721EE046E007B7554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE40B4521EE046E007B7554 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		6E423B4F90DD5E816A7AF1F2 /* Pods_FastNumber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastNumber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C25C9B98E5D88C8B7167457 /* Pods-FastNumber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastNumber.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber.release.xcconfig"; sourceTree = "<group>"; };
+		DA49392F21EEDBB900269C6B /* IndexHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndexHelper.h; sourceTree = "<group>"; };
+		DA49393021EEDBB900269C6B /* IndexHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndexHelper.m; sourceTree = "<group>"; };
 		DAE40B3C21EE046E007B7554 /* FastNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE40B3F21EE046E007B7554 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DAE40B4021EE046E007B7554 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				DAE40BC121EE20CF007B7554 /* CollectionReusableView.m */,
 				DAE40BBF21EE20CE007B7554 /* CollectionViewCell.h */,
 				DAE40BC021EE20CE007B7554 /* CollectionViewCell.m */,
+				DA49392F21EEDBB900269C6B /* IndexHelper.h */,
+				DA49393021EEDBB900269C6B /* IndexHelper.m */,
 				DAE40B4521EE046E007B7554 /* Main.storyboard */,
 				DAE40B4821EE0470007B7554 /* Assets.xcassets */,
 				DAE40B4A21EE0470007B7554 /* LaunchScreen.storyboard */,
@@ -183,6 +188,7 @@
 				DAE40B3921EE046E007B7554 /* Frameworks */,
 				DAE40B3A21EE046E007B7554 /* Resources */,
 				0B687E35F6DC3EDFD783F45F /* [CP] Embed Pods Frameworks */,
+				AF6600FDD76AA25D28D55289 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,6 +344,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AF6600FDD76AA25D28D55289 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastNumber/Pods-FastNumber-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -347,6 +368,7 @@
 			files = (
 				DAE40B4421EE046E007B7554 /* ViewController.m in Sources */,
 				DAE40BC221EE20CF007B7554 /* CollectionViewCell.m in Sources */,
+				DA49393121EEDBB900269C6B /* IndexHelper.m in Sources */,
 				DAE40BBD21EE1ABD007B7554 /* RememberNumberController.m in Sources */,
 				DAE40B4F21EE0470007B7554 /* main.m in Sources */,
 				DAE40B4121EE046E007B7554 /* AppDelegate.m in Sources */,
