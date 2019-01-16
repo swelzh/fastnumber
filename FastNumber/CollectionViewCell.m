@@ -19,13 +19,7 @@
 
   self = [super initWithFrame:frame];
   if (self) {
-    
-//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - 80) / 3, (SCREEN_WIDTH - 80) / 3)];
-//    [self.imageView setUserInteractionEnabled:true];
-//    [self addSubview:self.imageView];
-//    self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (SCREEN_WIDTH - 80) / 3, (SCREEN_WIDTH - 80) / 3, 20)];
-//    self.textLabel.textAlignment = NSTextAlignmentCenter;
-//    [self addSubview:self.textLabel];
+     
       self.textLabel = [[UILabel alloc] init];
       self.textLabel.textAlignment = NSTextAlignmentCenter;
       [self addSubview:self.textLabel];
@@ -46,7 +40,7 @@
       
       
       self.rightLine = [[UIImageView alloc] init];
-      self.rightLine.backgroundColor = [UIColor grayColor];
+      self.rightLine.backgroundColor = [UIColor lightGrayColor];
       [self addSubview:self.rightLine];
       [self.rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
           make.top.right.bottom.equalTo(self);

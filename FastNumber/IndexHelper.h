@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-#define kRowCount 16
+#define kRowCount 12
 
 @interface IndexHelper : NSObject
 
