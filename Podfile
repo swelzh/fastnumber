@@ -8,4 +8,5 @@ target 'FastNumber' do
     pod 'Masonry'
     pod 'SnapKit'
     pod 'EDColor'
+    pod 'MMNumberKeyboard'
 end

@@ -1,18 +1,21 @@
 PODS:
   - EDColor (1.0.1)
   - Masonry (1.1.0)
+  - MMNumberKeyboard (0.2.1)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - EDColor
   - Masonry
+  - MMNumberKeyboard
   - SnapKit
 
 SPEC CHECKSUMS:
   EDColor: 91d127cd67d7c1d3862846fb11ef4b3851151bfa
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MMNumberKeyboard: d7bd1646f62e7e0300eafd3e938899526d8d1d38
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: c402927f54fbe1cdb7a618e9936d8ed58a63476d
+PODFILE CHECKSUM: 0396a94e02d6d86f6fce723a7b532d7f6d254c7a
 
 COCOAPODS: 1.4.0
