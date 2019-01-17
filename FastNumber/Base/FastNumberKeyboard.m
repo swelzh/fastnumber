@@ -428,6 +428,7 @@ static const CGFloat FastNumberKeyboardPadSpacing = 8.0f;
     
     UIButton *button = self.buttonDictionary[@(FastNumberKeyboardButtonSpecial)];
     [button setImage:image forState:UIControlStateNormal];
+    button.hidden = YES;
 }
 
 - (void)configureSpecialKeyWithImage:(UIImage *)image target:(id)target action:(SEL)action
@@ -739,6 +740,8 @@ NS_INLINE CGRect MMButtonRectMake(CGRect rect, CGRect contentRect, BOOL usesRoun
     for (MMKeyboardButton *button in buttonDictionary.allValues) {
         button.usesRoundedCorners = usesRoundedButtons;
     }
+    
+    decimalPointKey.hidden = YES;
 }
 
 - (CGSize)sizeThatFits:(CGSize)size
@@ -773,7 +776,7 @@ NS_INLINE CGRect MMButtonRectMake(CGRect rect, CGRect contentRect, BOOL usesRoun
         return nil;
     }
 
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[MMNumberKeyboard class]];
     NSString *resourcePath = [bundle pathForResource:resource ofType:extension];
 
     if (resourcePath.length) {

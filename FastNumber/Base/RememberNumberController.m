@@ -91,11 +91,12 @@ static NSString * const reuseIdentifier = @"Cell";
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     self.collectionView.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
     self.collectionView.backgroundView.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
+    
     self.collectionView = [[UICollectionView alloc] initWithFrame:[[UIScreen mainScreen] bounds] collectionViewLayout:flowLayout];
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:@"MyCollectionCell"];
     self.collectionView.scrollEnabled = YES;
     
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.collectionView];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -110,12 +111,13 @@ static NSString * const reuseIdentifier = @"Cell";
     [inputView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.collectionView.mas_bottom);
         make.left.bottom.right.equalTo(self.view);
-        make.height.equalTo(@(200));
+        make.height.equalTo(@(250));
     }];
     
     // inputView
     // Create and configure the keyboard.
     FastNumberKeyboard *keyboard = [[FastNumberKeyboard alloc] initWithFrame:CGRectZero];
+    keyboard.backgroundColor = [UIColor colorWithHex:0xF4F2D7];
     keyboard.allowsDecimalPoint = YES;
     keyboard.delegate = self;
     
@@ -130,6 +132,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    return 2;
     return [self itemNumbers];
 }
 
