@@ -14,6 +14,7 @@
 #import "IndexHelper.h"
 #import "Masonry.h"
 #import "EDColor.h"
+#import "FastNumberKeyboard.h"
 
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
@@ -23,12 +24,15 @@ static int marginRight = 10;
 
 
 @interface RememberNumberController()
-    <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+    <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,
+FastNumberKeyboardDelegate>
 
 @property(strong,nonatomic) UICollectionView *collectionView;
 @property(strong,nonatomic) NSMutableArray *arr;
 @property(strong,nonatomic) IndexHelper *indexHelper;
 @property(strong,nonatomic) UIView *inputView;
+
+@property (strong, nonatomic) UITextField *textField;
 
 @end
 
@@ -45,18 +49,23 @@ static NSString * const reuseIdentifier = @"Cell";
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     
+    [self.textField becomeFirstResponder];
+}
+
+
+
+- (void)viewDidLoad {
     [super viewDidLoad];
-    //不要忘记初始化；
+    
     self.arr = [[NSMutableArray alloc] init];
     for (int i = 0; i < 400; i++) {
         NSNumber *nubmer = @(arc4random_uniform(10));
         [self.arr addObject:nubmer];
     }
-    
     [self addSubViews];
-    
 }
 
 
@@ -104,9 +113,18 @@ static NSString * const reuseIdentifier = @"Cell";
         make.height.equalTo(@(200));
     }];
     
- 
+    // inputView
+    // Create and configure the keyboard.
+    FastNumberKeyboard *keyboard = [[FastNumberKeyboard alloc] initWithFrame:CGRectZero];
+    keyboard.allowsDecimalPoint = YES;
+    keyboard.delegate = self;
     
-    
+    // Configure an example UITextField.
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectZero];
+    textField.backgroundColor = [UIColor yellowColor];
+    textField.inputView = keyboard;
+    [self.view addSubview:textField];
+    self.textField = textField;
 }
 
 
@@ -227,5 +245,12 @@ static NSString * const reuseIdentifier = @"Cell";
  */
 
 
+#pragma mark - FastNumberKeyboardDelegate.
+
+- (BOOL)numberKeyboardShouldReturn:(FastNumberKeyboard *)numberKeyboard
+{
+    // Do something with the done key if neeed. Return YES to dismiss the keyboard.
+    return YES;
+}
 
 @end
